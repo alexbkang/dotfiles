@@ -11,7 +11,7 @@ cl() {
   fi
   eza -l --icons --git -a --no-user --time-style=iso
 }
-alias la='eza -l --icons --git -a --no-user --time-style=iso'
+alias ls='eza -l --icons --git -a --no-user --time-style=iso'
 alias lt='eza --tree --level=2 -l --icons --git -a --no-user --time-style=iso'
 alias vim="nvim"
 alias vi="nvim"
