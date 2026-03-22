@@ -255,8 +255,9 @@ vim.keymap.set("n", "<leader>fr", MiniPick.builtin.resume, { desc = "Resume pick
 -- file explorer
 require("mini.files").setup({
   mappings = {
-    go_in_plus = "<CR>",
-    go_out = "H",
+    close       = '<Esc>',
+    go_in_plus  = "<CR>",
+    go_out      = "H",
     go_out_plus = "h",
   },
   windows = {

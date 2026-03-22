@@ -3,14 +3,22 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # alias
-cl() {
-  if [ $# -eq 0 ]; then
-    cd ~ || return
-  else
-    cd "$@" || return
-  fi
-  eza -l --icons --git -a --no-user --time-style=iso
+export FZF_DEFAULT_OPTS_FILE=~/.fzfrc
+repos() {
+  local repo
+  repo="$(zoxide query --list | while read -r dir; do
+    [ -d "$dir/.git" ] && echo "${dir/$HOME/~}"
+  done | fzf --preview "git -C \$(echo {} | sed 's|~|$HOME|') log -n 200 --pretty=medium --all --graph --color=always")"
+
+  [ -z "$repo" ] && return
+  repo="${repo/#\~/$HOME}"
+
+  local file
+  file="$(cd "$repo" && fzf --preview "bat --color=always {}")"
+
+  [ -n "$file" ] && nvim "$repo/$file"
 }
+alias c="clear"
 alias ls='eza -l --icons --git -a --no-user --time-style=iso'
 alias lt='eza --tree --level=2 -l --icons --git -a --no-user --time-style=iso'
 alias vim="nvim"
