@@ -23,6 +23,7 @@ alias ls='eza -l --icons --git -a --no-user --time-style=iso'
 alias lt='eza --tree --level=2 -l --icons --git -a --no-user --time-style=iso'
 alias vim="nvim"
 alias vi="nvim"
+alias vo="nvim -O"
 
 # vi motions
 set -o vi

@@ -1,0 +1,3 @@
+--height 45%
+--bind "ctrl-u:preview-half-page-up"
+--bind "ctrl-d:preview-half-page-down"
