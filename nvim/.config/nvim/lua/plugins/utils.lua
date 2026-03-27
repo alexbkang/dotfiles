@@ -208,6 +208,12 @@ return {
 		},
 		opts = {
 			word_diff_highlight = false,
+			kind = "floating",
+			floating = {
+				border = "single",
+				width = 0.8,
+				height = 0.8,
+			},
 		},
 		cmd = "Neogit",
 		keys = {

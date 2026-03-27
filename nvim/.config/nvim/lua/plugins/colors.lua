@@ -20,6 +20,7 @@ return {
 				vim.api.nvim_set_hl(0, "FloatBorder", { fg = pal.surface2, bg = "none" })
 				vim.api.nvim_set_hl(0, "FloatTitle", { fg = pal.surface2, bg = "none" })
 			end
+			vim.api.nvim_set_hl(0, "NeogitFloatBorder", { link = "FloatBorder" })
 		end,
 	},
 	{
