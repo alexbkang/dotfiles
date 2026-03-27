@@ -66,7 +66,13 @@ return {
 				desc = "Git branches",
 			},
 		},
-		opts = {},
+		opts = {
+			winopts = {
+				preview = {
+					layout = "horizontal",
+				},
+			},
+		},
 	},
 	{
 		"mfussenegger/nvim-dap",
