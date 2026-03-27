@@ -220,4 +220,21 @@ return {
 			{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
 		},
 	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+			local group = vim.api.nvim_create_augroup("LualineGitsignsRefresh", { clear = true })
+			vim.api.nvim_create_autocmd("User", {
+				group = group,
+				pattern = "GitsignsUpdate",
+				callback = function()
+					local ok, lualine = pcall(require, "lualine")
+					if ok then
+						lualine.refresh({ place = { "statusline" } })
+					end
+				end,
+			})
+		end,
+	},
 }

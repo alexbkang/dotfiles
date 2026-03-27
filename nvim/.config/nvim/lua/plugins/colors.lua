@@ -25,21 +25,37 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		opts = {
-			options = {
-				theme = "auto",
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
-			},
-			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { { "branch", icon = "" }, "diff" },
-				lualine_c = { "filename" },
-				lualine_x = { "diagnostic", "filetype" },
-				lualine_y = {},
-				lualine_z = { "location" },
-			},
-		},
+		config = function()
+			local function diff_source()
+				local gitsigns = vim.b.gitsigns_status_dict
+				if gitsigns then
+					return {
+						added = gitsigns.added,
+						modified = gitsigns.changed,
+						removed = gitsigns.removed,
+					}
+				end
+			end
+
+			require("lualine").setup({
+				options = {
+					theme = "auto",
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
+					refresh = {
+						statusline = 100,
+					},
+				},
+				sections = {
+					lualine_a = { "mode" },
+					lualine_b = { { "branch", icon = "" }, { "diff", source = diff_source } },
+					lualine_c = { "filename" },
+					lualine_x = { "diagnostic", "filetype" },
+					lualine_y = {},
+					lualine_z = { "location" },
+				},
+			})
+		end,
 	},
 	{
 		"nvim-mini/mini.notify",
