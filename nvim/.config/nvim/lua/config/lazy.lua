@@ -14,6 +14,28 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Compatibility: `vim.tbl_flatten` is deprecated in newer Neovim.
+-- Some plugins (e.g. lualine.nvim) still call it.
+do
+	local v = vim.version and vim.version() or nil
+	if v and v.major == 0 and v.minor >= 11 then
+		vim.tbl_flatten = function(t)
+			local out = {}
+			local function flatten(x)
+				if type(x) == "table" then
+					for _, v2 in ipairs(x) do
+						flatten(v2)
+					end
+				else
+					out[#out + 1] = x
+				end
+			end
+			flatten(t)
+			return out
+		end
+	end
+end
+
 vim.opt.guicursor = "n-v-c-i:block"
 vim.opt.number = true
 vim.opt.relativenumber = true

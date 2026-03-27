@@ -1,7 +1,6 @@
 return {
 	{
 		"ibhagwan/fzf-lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = {
 			{
 				"<leader>ff",
@@ -60,25 +59,11 @@ return {
 				desc = "Keymaps",
 			},
 			{
-				"<leader>gs",
-				function()
-					require("fzf-lua").git_status()
-				end,
-				desc = "Git status (picker)",
-			},
-			{
 				"<leader>gb",
 				function()
 					require("fzf-lua").git_branches()
 				end,
 				desc = "Git branches",
-			},
-			{
-				"<leader>gc",
-				function()
-					require("fzf-lua").git_commits()
-				end,
-				desc = "Git commits",
 			},
 		},
 		opts = {},
@@ -195,19 +180,6 @@ return {
 		end,
 	},
 	{
-		"NeogitOrg/neogit",
-		lazy = true,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"esmuellert/codediff.nvim",
-			"nvim-mini/mini.pick",
-		},
-		cmd = "Neogit",
-		keys = {
-			{ "<leader>G", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
-		},
-	},
-	{
 		"ldelossa/gh.nvim",
 		dependencies = {
 			{
@@ -220,18 +192,5 @@ return {
 		config = function()
 			require("litee.gh").setup()
 		end,
-	},
-	{
-		"alexbkang/undodiff",
-		cmd = "UndoDiff",
-		dependencies = {
-			"esmuellert/codediff.nvim",
-		},
-		config = function()
-			require("undodiff").setup()
-		end,
-		keys = {
-			{ "<leader>U", "<cmd>UndoDiff<cr>", desc = "UndoDiff UI" },
-		},
 	},
 }
