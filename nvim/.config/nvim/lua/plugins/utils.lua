@@ -145,7 +145,7 @@ return {
 		lazy = false,
 		version = "1.*",
 		keys = {
-			{ "<leader>dv", "<cmd>DapViewToggle<cr>", desc = "DAP view toggle" },
+			{ "<leader>dd", "<cmd>DapViewToggle<cr>", desc = "DAP view toggle" },
 		},
 		opts = {},
 	},
@@ -192,5 +192,32 @@ return {
 		config = function()
 			require("litee.gh").setup()
 		end,
+	},
+	{
+		"kdheepak/lazygit.nvim",
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		init = function()
+			vim.g.lazygit_floating_window_scaling_factor = 1.0
+			vim.g.lazygit_floating_window_border_chars = {
+				"┌",
+				"─",
+				"┐",
+				"│",
+				"┘",
+				"─",
+				"└",
+				"│",
+			}
+		end,
+		keys = {
+			{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		},
 	},
 }
