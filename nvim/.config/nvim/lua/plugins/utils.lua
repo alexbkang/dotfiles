@@ -200,30 +200,18 @@ return {
 		end,
 	},
 	{
-		"kdheepak/lazygit.nvim",
+		"NeogitOrg/neogit",
 		lazy = true,
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"ibhagwan/fzf-lua",
 		},
-		init = function()
-			vim.g.lazygit_floating_window_scaling_factor = 1.0
-			vim.g.lazygit_floating_window_border_chars = {
-				"┌",
-				"─",
-				"┐",
-				"│",
-				"┘",
-				"─",
-				"└",
-				"│",
-			}
-		end,
+		opts = {
+			word_diff_highlight = false,
+		},
+		cmd = "Neogit",
 		keys = {
-			{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+			{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
 		},
 	},
 }
