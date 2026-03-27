@@ -1,4 +1,3 @@
-theme = custom.conf
+theme = Catppuccin Frappe
 font-size = 14 
 font-family = JetBrains Mono
-
