@@ -4,6 +4,7 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # alias
 export FZF_DEFAULT_OPTS_FILE=~/.fzfrc
+export XDG_CONFIG_HOME="$HOME/.config"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 repos() {
   local repo
