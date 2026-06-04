@@ -14,6 +14,7 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "isort", "black" },
+					java = { "google-java-format" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
@@ -70,7 +71,32 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = { "mason-org/mason.nvim" },
 		opts = {
-			ensure_installed = { "stylua", "isort", "black" },
+			ensure_installed = { "stylua", "isort", "black", "google-java-format" },
 		},
+	},
+	{
+		"mfussenegger/nvim-jdtls",
+		dependencies = { "saghen/blink.cmp" },
+		config = function()
+			local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+			local workspace_dir = vim.fn.stdpath("data")
+				.. package.config:sub(1, 1)
+				.. "jdtls-workspace"
+				.. package.config:sub(1, 1)
+				.. project_name
+			vim.lsp.config("jdtls", {
+				name = "jdtls",
+				cmd = { "jdtls", "-data", workspace_dir },
+				root_dir = vim.fs.root(0, { "gradlew", ".git", "mvnw" }),
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
+				settings = {
+					java = {},
+				},
+				init_options = {
+					bundles = {},
+				},
+			})
+			vim.lsp.enable("jdtls")
+		end,
 	},
 }
