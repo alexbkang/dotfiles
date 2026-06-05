@@ -42,3 +42,6 @@ eval "$(starship init zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# pi-coding-agent
+export PI_SKIP_VERSION_CHECK=1
