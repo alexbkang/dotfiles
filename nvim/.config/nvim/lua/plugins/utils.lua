@@ -19,7 +19,10 @@ return {
 			{
 				"<leader>fb",
 				function()
-					require("fzf-lua").buffers()
+					require("fzf-lua").buffers({
+						filename_only = true,
+						_headers = { "cwd" },
+					})
 				end,
 				desc = "Buffers",
 			},
@@ -68,6 +71,8 @@ return {
 		},
 		opts = {
 			winopts = {
+				width = 0.85,
+				height = 0.85,
 				preview = {
 					layout = "horizontal",
 				},
@@ -218,6 +223,34 @@ return {
 		cmd = "Neogit",
 		keys = {
 			{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
+		},
+	},
+	{
+		"stevearc/oil.nvim",
+		lazy = false,
+		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+		keys = {
+			{
+				"-",
+				"<cmd>lua require('oil').toggle_float(nil, { preview = {} })<cr>",
+				desc = "Open parent directory (float)",
+			},
+		},
+		opts = {
+			default_file_explorer = true,
+			float = {
+				padding = 2,
+				max_width = 0.85,
+				max_height = 0.85,
+				border = "single",
+				preview_split = "right",
+			},
+			preview_win = {
+				preview_method = "fast_scratch",
+			},
+			view_options = {
+				show_hidden = true,
+			},
 		},
 	},
 	{

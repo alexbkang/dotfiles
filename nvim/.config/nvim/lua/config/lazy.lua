@@ -55,6 +55,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
 vim.opt.undolevels = 10000
 vim.opt.shortmess:append("I")
+vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 vim.opt.winborder = "single"
 vim.opt.winblend = 0
