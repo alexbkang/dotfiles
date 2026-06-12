@@ -270,4 +270,46 @@ return {
 			})
 		end,
 	},
+	{
+		"folke/noice.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {
+			cmdline = {
+				format = {
+					cmdline = { title = "" },
+					search_down = { title = "" },
+					search_up = { title = "" },
+					filter = { title = "" },
+					lua = { title = "" },
+					help = { title = "" },
+					input = { title = "" },
+				},
+			},
+			views = {
+				cmdline_popup = {
+					border = {
+						style = "single",
+					},
+					position = {
+						row = 5,
+					},
+					size = {
+						width = 40,
+					},
+				},
+			},
+			messages = {
+				enabled = false,
+			},
+			popupmenu = {
+				enabled = false,
+			},
+			lsp = {
+				progress = { enabled = false },
+				hover = { enabled = false },
+				signature = { enabled = false },
+				message = { enabled = false },
+			},
+		},
+	},
 }
