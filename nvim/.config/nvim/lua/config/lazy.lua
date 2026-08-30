@@ -61,6 +61,11 @@ vim.opt.winborder = "single"
 vim.opt.winblend = 0
 vim.opt.pumblend = 0
 
+vim.keymap.set({ "n", "v", "i" }, "<ScrollWheelUp>", "<Nop>")
+vim.keymap.set({ "n", "v", "i" }, "<ScrollWheelDown>", "<Nop>")
+vim.keymap.set({ "n", "v", "i" }, "<ScrollWheelLeft>", "<Nop>")
+vim.keymap.set({ "n", "v", "i" }, "<ScrollWheelRight>", "<Nop>")
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 

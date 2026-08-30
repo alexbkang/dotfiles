@@ -1,4 +1,5 @@
 theme = Catppuccin Frappe
+font-family = "JetBrainsMonoNL Nerd Font"
 font-size = 17
 window-padding-x = 10
 window-padding-y = 10
