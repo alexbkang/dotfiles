@@ -1,9 +1,10 @@
 # dotfiles
 
+In the repo directory:
 ```bash
-cd <REPO-DIR> && brew bundle --file=./Brewfile
+brew bundle --file=./Brewfile
 ```
 
 ```bash
-cd <REPO-DIR> && stow --target=$HOME .
+stow --target=$HOME .
 ```
