@@ -10,7 +10,7 @@ Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 
 Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
 
-It reviews the diff against the spec that `/to-spec` wrote to `.scratch/<feature-slug>/spec.md`.
+It reviews the diff against the spec and tickets that `/to-spec` and `/to-tickets` wrote under `.scratch/<feature-slug>/`.
 
 ## Process
 

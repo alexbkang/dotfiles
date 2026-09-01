@@ -1,6 +1,6 @@
 ---
 name: to-tickets
-description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).
+description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published as one file per ticket under .scratch/<feature-slug>/issues/.
 disable-model-invocation: true
 ---
 
@@ -8,13 +8,13 @@ disable-model-invocation: true
 
 Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
-The third stage of the chain: `/grilling` settles the design → `/to-spec` records it to `.scratch/<feature-slug>/spec.md` → `/to-tickets` splits it into tickets → `/implement` builds them → `/code-review` reviews the work. Run this after a spec exists and you want the work broken into agent-grabbable vertical slices.
+Work from the settled spec written by `/to-spec` to `.scratch/<feature-slug>/spec.md` — if one exists, read it first.
 
 ## Process
 
 ### 1. Gather context
 
-Work from whatever is already in the conversation context. If the user passes a reference (a spec path, an issue number or URL) as an argument, fetch it and read its full body and comments. The spec is usually at `.scratch/<feature-slug>/spec.md` (written by `/to-spec`); read it from there.
+Work from whatever is already in the conversation context. If the user passes a reference (a spec path, an issue number or URL) as an argument, fetch it and read its full body and comments.
 
 ### 2. Explore the codebase (optional)
 
@@ -55,7 +55,7 @@ Ask the user:
 
 Iterate until the user approves the breakdown.
 
-### 5. Publish the tickets to the configured tracker
+### 5. Publish the tickets (local files)
 
 Publish the approved tickets as one file per ticket under `.scratch/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01` in dependency order (blockers first). Each file's "Blocked by" lists the numbers/titles it depends on. Use the per-ticket file template below: one ticket per file, never a single combined file.
 
