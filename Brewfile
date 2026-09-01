@@ -13,8 +13,6 @@ brew "go"
 brew "libtiff"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
-# Configurable static site generator
-brew "hugo"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Ambitious Vim-fork focused on extensibility and agility
