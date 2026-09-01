@@ -1,0 +1,8 @@
+{
+  "lastChangelogVersion": "0.84.4",
+  "theme": "light/dark",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "off",
+  "quietStartup": true
+}
