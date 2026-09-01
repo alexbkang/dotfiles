@@ -4,5 +4,10 @@
   "defaultProvider": "deepseek",
   "defaultModel": "deepseek-v4-flash",
   "defaultThinkingLevel": "off",
-  "quietStartup": true
+  "quietStartup": true,
+  "images": {
+    "blockImages": true
+  },
+  "hideThinkingBlock": true,
+  "defaultProjectTrust": "always"
 }
