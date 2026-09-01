@@ -1,11 +1,12 @@
 # My Agent Skills
 
-Personal agent skills (slash commands and behaviors) loaded by my coding agents. The `~/.agents/skills` directory is a symlink to this folder, so edits here are live immediately.
+Personal agent skills (slash commands and behaviors) loaded by my coding agents. This is the `skills` stow package in my dotfiles repo: `skills/.agents/` mirrors `~/.agents/`. From `~/dotfiles`, run `stow skills` to link `~/.agents` here. Edits in this folder are live immediately.
 
 ## How to use
 
 - **Edit a skill**: change the files in any skill folder here. The skill takes effect on the next session (or immediately for models that hot-reload).
-- **Add a skill**: drop a new folder containing a `SKILL.md` here, or install one from elsewhere and move it in.
+- **Add a skill**: drop a new folder containing a `SKILL.md` into `skills/` here (or install one from elsewhere and move it in).
+- **Add something else to `~/.agents`**: drop it into this folder — the whole `~/.agents` mirrors `skills/.agents/`, not just skills.
 - **Remove a skill**: delete its folder.
 
 ## Provenance
