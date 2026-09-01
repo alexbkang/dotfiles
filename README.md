@@ -39,9 +39,10 @@ lives at `~/dotfiles`, a subdirectory of the target `~`.
 ## `~/.pi` — pi's live runtime directory
 
 `.pi/` in this repo tracks only pi config you want version-controlled:
-`agent/settings.json` and `agent/themes/`. Everything else pi owns at runtime
-(auth, sessions, models-store, trust) is excluded via `.stowignore` and is
-**never touched** by stow.
+`agent/settings.json` and `agent/themes/`. pi's live runtime state
+(auth.json, sessions/, models-store.json, trust.json) is simply **not tracked
+in the repo**, so stow never touches it — stow only links the files present in
+the package tree.
 
 pi writes `settings.json` through the symlink with a plain `writeFileSync`, so
 changes you make inside pi are automatically reflected back into this repo.
