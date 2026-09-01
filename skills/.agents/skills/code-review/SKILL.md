@@ -10,7 +10,7 @@ Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 
 Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
 
-It reviews the diff against the spec written by `to-spec` to `.scratch/<feature-slug>/spec.md`.
+It reviews the diff against the spec written by `/to-spec` to `.scratch/<feature-slug>/spec.md`.
 
 ## Process
 
@@ -24,12 +24,9 @@ Before going further, confirm the fixed point resolves (`git rev-parse <fixed-po
 
 ### 2. Identify the spec source
 
-Look for the originating spec, in this order:
+Look for the spec written by `/to-spec` under `.scratch/<feature-slug>/spec.md` matching the branch name or feature.
 
-1. The spec written by `to-spec` under `.scratch/<feature-slug>/spec.md` matching the branch name or feature.
-2. A path the user passed as an argument.
-3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
-4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
 
 ### 3. Identify the standards sources
 
