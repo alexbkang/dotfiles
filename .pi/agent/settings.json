@@ -9,5 +9,9 @@
     "blockImages": true
   },
   "hideThinkingBlock": true,
-  "defaultProjectTrust": "always"
+  "defaultProjectTrust": "always",
+  "packages": [
+    "npm:pi-subagents-lite",
+    "npm:@syzom/nopus"
+  ]
 }
