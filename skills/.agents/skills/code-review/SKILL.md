@@ -10,7 +10,7 @@ Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 
 Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
 
-The final stage of a fixed chain: `grilling → to-spec → implement → code-review`. It reviews the diff against the spec written by `to-spec` to `.scratch/<feature-slug>/spec.md`.
+It reviews the diff against the spec written by `to-spec` to `.scratch/<feature-slug>/spec.md`.
 
 ## Process
 

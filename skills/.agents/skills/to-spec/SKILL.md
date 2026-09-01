@@ -1,12 +1,10 @@
 ---
 name: to-spec
-description: "Turn the grilled, settled conversation into a spec, saved to .scratch/<feature-slug>/spec.md. No interview: the decisions were already made during grilling."
+description: "Turn the settled conversation into a spec at .scratch/<feature-slug>/spec.md. No interview: the decisions were already made during grilling."
 disable-model-invocation: true
 ---
 
-The second stage of a fixed chain: `grilling → to-spec → implement → code-review`. Run it only after the design has been settled and you want a durable spec to carry the work into implementation.
-
-This skill takes the current conversation context and codebase understanding and produces a spec. Do **not** interview the user; just synthesize what was already decided during grilling. Anything the spec asserts that the user never actually said is a defect.
+This skill takes the current conversation context and codebase understanding and produces a spec. Do **not** interview the user; just synthesize what was already decided. Anything the spec asserts that the user never actually said is a defect.
 
 The spec is a markdown file written to `.scratch/<feature-slug>/spec.md`, following the local issue-convention layout (`<feature-slug>` is a short kebab-case name for the feature). Create the directory if needed. The file is simply the spec's home — there is no tracker, no ticket, and no triage vocabulary attached to it.
 
@@ -18,7 +16,7 @@ The spec is a markdown file written to `.scratch/<feature-slug>/spec.md`, follow
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below to `.scratch/<feature-slug>/spec.md`. The next stage, `implement`, will read it from there.
+3. Write the spec using the template below to `.scratch/<feature-slug>/spec.md`.
 
 <spec-template>
 
