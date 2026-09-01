@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
 
-The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.
+The issue tracker is **local markdown**: specs live under `.scratch/`, one feature per directory. Write the spec to `.scratch/<feature-slug>/spec.md` (creating the directory if needed). Record triage state as a `Status: ready-for-agent` line near the top of the file.
 
 ## Process
 
@@ -16,7 +16,7 @@ The issue tracker and triage label vocabulary should have been provided to you. 
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
+3. Write the spec using the template below, then publish it to `.scratch/<feature-slug>/spec.md`. Record `Status: ready-for-agent` in the file - no need for additional triage.
 
 <spec-template>
 
