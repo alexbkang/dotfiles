@@ -27,7 +27,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias vo="nvim -O"
 
-# vi motions
 set -o emacs
 # set for faster escape key 
 KEYTIMEOUT=1
