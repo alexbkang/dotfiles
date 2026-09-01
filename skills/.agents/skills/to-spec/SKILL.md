@@ -1,12 +1,14 @@
 ---
 name: to-spec
-description: "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."
+description: "Turn the grilled, settled conversation into a spec, saved to .scratch/<feature-slug>/spec.md. No interview: the decisions were already made during grilling."
 disable-model-invocation: true
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
+The second stage of a fixed chain: `grilling → to-spec → implement → code-review`. Run it only after the design has been settled and you want a durable spec to carry the work into implementation.
 
-The issue tracker is **local markdown**: specs live under `.scratch/`, one feature per directory. Write the spec to `.scratch/<feature-slug>/spec.md` (creating the directory if needed). Record triage state as a `Status: ready-for-agent` line near the top of the file.
+This skill takes the current conversation context and codebase understanding and produces a spec. Do **not** interview the user; just synthesize what was already decided during grilling. Anything the spec asserts that the user never actually said is a defect.
+
+The spec is a markdown file written to `.scratch/<feature-slug>/spec.md`, following the local issue-convention layout (`<feature-slug>` is a short kebab-case name for the feature). Create the directory if needed. The file is simply the spec's home — there is no tracker, no ticket, and no triage vocabulary attached to it.
 
 ## Process
 
@@ -16,7 +18,7 @@ The issue tracker is **local markdown**: specs live under `.scratch/`, one featu
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then publish it to `.scratch/<feature-slug>/spec.md`. Record `Status: ready-for-agent` in the file - no need for additional triage.
+3. Write the spec using the template below to `.scratch/<feature-slug>/spec.md`. The next stage, `implement`, will read it from there.
 
 <spec-template>
 

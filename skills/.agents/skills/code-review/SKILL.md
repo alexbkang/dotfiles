@@ -10,7 +10,7 @@ Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 
 Both axes run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings.
 
-The issue tracker is **local markdown**: specs and issues live under `.scratch/`, one file per feature. Issue references in commits resolve to those local files (step 2.1).
+The final stage of a fixed chain: `grilling → to-spec → implement → code-review`. It reviews the diff against the spec written by `to-spec` to `.scratch/<feature-slug>/spec.md`.
 
 ## Process
 
@@ -26,7 +26,7 @@ Before going further, confirm the fixed point resolves (`git rev-parse <fixed-po
 
 Look for the originating spec, in this order:
 
-1. Issue references in the commit messages (`#123`, or a ticket number); resolve them against the files under `.scratch/`.
+1. The spec written by `to-spec` under `.scratch/<feature-slug>/spec.md` matching the branch name or feature.
 2. A path the user passed as an argument.
 3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
 4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".

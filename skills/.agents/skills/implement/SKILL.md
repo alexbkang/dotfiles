@@ -1,12 +1,14 @@
 ---
 name: implement
-description: "Implement a piece of work based on a spec or set of tickets."
+description: "Implement a piece of work from its spec."
 disable-model-invocation: true
 ---
 
-Implement the work described by the user in the spec or tickets.
+The third stage of a fixed chain: `grilling → to-spec → implement → code-review`. Run it after a spec exists and you want the work built.
 
-Use /tdd where possible, at pre-agreed seams.
+Implement the work described by the spec. The spec was written to `.scratch/<feature-slug>/spec.md` by `to-spec`; read it from there (or use the path the user passes).
+
+Use /tdd where possible, at pre-agreed seams — the seams were agreed during `to-spec`.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
