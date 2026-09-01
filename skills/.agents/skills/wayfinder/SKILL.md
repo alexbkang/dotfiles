@@ -24,12 +24,14 @@ The map is an **index**, not a store. It lists the decisions made and points at 
 
 **This repo uses one local way.** Everything lives under `.scratch/`, the same convention `to-tickets` uses:
 
-- **Map**: `.scratch/<effort>/map.md`
-- **Child ticket**: `.scratch/<effort>/issues/NN-<slug>.md`, numbered from `01`, the question in the body, plus `Type:` and `Status:` lines
-- **Blocking**: a `Blocked by: NN, NN` line; a ticket is unblocked when every file it lists is `resolved`
-- **Frontier**: scan `.scratch/<effort>/issues/` for open, unblocked, unclaimed files; first by number wins
-- **Claim**: set `Status: claimed` and save before any work
-- **Resolve**: append the answer under `## Answer`, set `Status: resolved`, then append a context pointer (gist + link) to the map's Decisions-so-far in `map.md`
+The **map** is a file with one **child** file per ticket.
+
+- **Map**: `.scratch/<effort>/map.md` (the Notes / Decisions-so-far / Fog body).
+- **Child ticket**: `.scratch/<effort>/issues/NN-<slug>.md`, numbered from `01`, with the question in the body. A `Type:` line records the ticket type (`research`/`prototype`/`grilling`/`task`); a `Status:` line records `claimed`/`resolved`.
+- **Blocking**: a `Blocked by: NN, NN` line near the top. A ticket is unblocked when every file it lists is `resolved`.
+- **Frontier**: scan `.scratch/<effort>/issues/` for files that are open, unblocked, and unclaimed; first by number wins.
+- **Claim**: set `Status: claimed` and save before any work.
+- **Resolve**: append the answer under an `## Answer` heading, set `Status: resolved`, then append a context pointer (gist + link) to the map's Decisions-so-far in `map.md`.
 
 ### The map body
 
