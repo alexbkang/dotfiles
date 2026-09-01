@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
-Work from the settled spec written by `/to-spec` to `.scratch/<feature-slug>/spec.md` — if one exists, read it first.
+Work from a settled spec — it should have been written first. Read it from `.scratch/<feature-slug>/spec.md` if it exists.
 
 ## Process
 
