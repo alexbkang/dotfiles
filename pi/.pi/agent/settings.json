@@ -1,7 +1,0 @@
-{
-  "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-pro",
-  "defaultThinkingLevel": "high",
-  "theme": "terminal",
-  "lastChangelogVersion": "0.84.3"
-}

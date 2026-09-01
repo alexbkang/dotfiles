@@ -1,0 +1,11 @@
+# gnu stow ignore file — paths relative to this package root (~/dotfiles)
+#
+# `~/.pi` is pi's LIVE runtime directory. We track only the config files we
+# want under version control (settings.json + themes/) and let pi own the rest.
+# These entries tell stow to NEVER touch pi's live state, so linking
+# .pi never overwrites or shadows it:
+.pi/agent/auth.json
+.pi/agent/models-store.json
+.pi/agent/trust.json
+.pi/agent/sessions
+.pi/agent/skills
