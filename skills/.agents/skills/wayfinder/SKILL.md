@@ -22,7 +22,7 @@ The map is a single issue on this repo's issue tracker, labelled `wayfinder:map`
 
 The map is an **index**, not a store. It lists the decisions made and points at the tickets that hold their detail; a decision lives in exactly one place, its ticket, so the map never restates it, only gists it and links.
 
-**Where the map, its child tickets, blocking, and frontier queries live is this repo's single local way: the local-markdown tracker.** There is no other tracker and nothing is tracker-specific here — no `/setup-matt-pocock-skills` run. Everything lives under `.scratch/`, the same convention `to-tickets` publishes to:
+**This repo uses one local way.** Everything lives under `.scratch/`, the same convention `to-tickets` uses:
 
 - **Map**: `.scratch/<effort>/map.md`
 - **Child ticket**: `.scratch/<effort>/issues/NN-<slug>.md`, numbered from `01`, the question in the body, plus `Type:` and `Status:` lines
