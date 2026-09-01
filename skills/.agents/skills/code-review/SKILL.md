@@ -24,12 +24,7 @@ Before going further, confirm the fixed point resolves (`git rev-parse <fixed-po
 
 ### 2. Identify the spec source
 
-Look for the originating spec, in this order:
-
-1. The spec written by `to-spec` under `.scratch/<feature-slug>/spec.md` matching the branch name or feature.
-2. A path the user passed as an argument.
-3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch name or feature.
-4. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+The originating spec, written by `to-spec`, is `.scratch/<feature-slug>/spec.md` — locate it by matching the branch name or feature, or take the path the user passes. If there is no spec, the **Spec** sub-agent skips and reports "no spec available".
 
 ### 3. Identify the standards sources
 
