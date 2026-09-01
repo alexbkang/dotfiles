@@ -1,12 +1,12 @@
 ---
 name: to-spec
-description: "Turn the settled conversation into a spec at .scratch/<feature-slug>/spec.md. No interview: the decisions were already made during grilling."
+description: "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."
 disable-model-invocation: true
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a spec. Do **not** interview the user; just synthesize what was already decided. Anything the spec asserts that the user never actually said is a defect.
+This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
 
-The spec is a markdown file written to `.scratch/<feature-slug>/spec.md`, following the local issue-convention layout (`<feature-slug>` is a short kebab-case name for the feature). Create the directory if needed. The file is simply the spec's home — there is no tracker, no ticket, and no triage vocabulary attached to it.
+The spec is published as a markdown file at `.scratch/<feature-slug>/spec.md` (create the directory if needed).
 
 ## Process
 
