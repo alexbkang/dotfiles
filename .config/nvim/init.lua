@@ -24,6 +24,26 @@ vim.opt.winborder = "single"
 vim.opt.winblend = 0
 vim.opt.pumblend = 0
 
+local aug = vim.api.nvim_create_augroup("CustomAutocmds", { clear = true })
+vim.api.nvim_create_autocmd("FocusGained", {
+	group = aug,
+	desc = "Reload files when we focus vim",
+	callback = function()
+		if vim.fn.getcmdwintype() == "" then
+			vim.cmd.checktime()
+		end
+	end,
+})
+vim.api.nvim_create_autocmd("BufEnter", {
+	group = aug,
+	desc = "Check unmodified buffers for disk changes on entry",
+	callback = function()
+		if vim.bo.buftype == "" and not vim.bo.modified and vim.fn.expand("%") ~= "" then
+			vim.cmd.checktime(vim.api.nvim_get_current_buf())
+		end
+	end,
+})
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
@@ -48,7 +68,7 @@ local pack_hooks = function(ev)
 		vim.cmd("TSUpdate")
 	end
 end
-vim.api.nvim_create_autocmd("PackChanged", { callback = pack_hooks })
+vim.api.nvim_create_autocmd("PackChanged", { group = aug, callback = pack_hooks })
 
 vim.pack.add({
 	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
@@ -170,6 +190,7 @@ end, { desc = "Help tags" })
 require("gitsigns").setup()
 
 vim.api.nvim_create_autocmd("User", {
+	group = aug,
 	pattern = "GitsignsUpdate",
 	callback = function()
 		local ok, lualine = pcall(require, "lualine")
@@ -199,6 +220,7 @@ require("conform").setup({
 -- Treesitter
 require("nvim-treesitter").install({ "python", "c", "lua", "java" })
 vim.api.nvim_create_autocmd("FileType", {
+	group = aug,
 	pattern = { "python", "c", "lua", "java" },
 	callback = function()
 		vim.treesitter.start()
