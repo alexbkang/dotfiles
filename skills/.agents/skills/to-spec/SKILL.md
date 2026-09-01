@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
 
-The spec is published as a markdown file at `.scratch/<feature-slug>/spec.md` (create the directory if needed).
+The spec is published as a markdown file at `.scratch/<feature-slug>/spec.md`.
 
 ## Process
 
