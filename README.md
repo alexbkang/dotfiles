@@ -3,5 +3,5 @@
 ## How to use
 
 ```bash
-cd ~/dotfiles && stow --target=$HOME .
+cd <REPO-DIR> && stow --target=$HOME .
 ```
