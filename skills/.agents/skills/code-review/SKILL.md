@@ -24,7 +24,7 @@ Before going further, confirm the fixed point resolves (`git rev-parse <fixed-po
 
 ### 2. Identify the spec source
 
-Look for a spec file under `.scratch/` matching the branch name or feature (`.scratch/<feature-slug>/spec.md`), plus any per-ticket files your skill's `/to-tickets` wrote to `.scratch/<feature-slug>/issues/`. Review the diff against the spec and its tickets together.
+A spec file under `.scratch/` matching the branch name or feature.
 
 If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
 
