@@ -1,6 +1,6 @@
 ---
 name: implement
-description: "Implement a piece of work from its spec."
+description: "Implement a piece of work based on a spec."
 disable-model-invocation: true
 ---
 
