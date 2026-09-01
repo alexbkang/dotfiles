@@ -24,7 +24,7 @@ Before going further, confirm the fixed point resolves (`git rev-parse <fixed-po
 
 ### 2. Identify the spec source
 
-Look for the spec written by `/to-spec` under `.scratch/<feature-slug>/spec.md` matching the branch name or feature.
+Look for the originating spec written by `/to-spec` under `.scratch/<feature-slug>/spec.md` matching the branch name or feature, plus the per-ticket files `/to-tickets` wrote to `.scratch/<feature-slug>/issues/`. Review the diff against the spec and its tickets together.
 
 If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
 
