@@ -4,7 +4,7 @@ description: "Implement a piece of work based on a spec."
 disable-model-invocation: true
 ---
 
-Implement the work described by the spec. The spec was written to `.scratch/<feature-slug>/spec.md` by `/to-spec`; read it from there (or use the path the user passes).
+Implement the work described by the spec. The spec was written to `.scratch/<feature-slug>/spec.md` by `/to-spec`; read it from there.
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end.
 
