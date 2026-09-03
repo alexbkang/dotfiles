@@ -8,20 +8,24 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Tap Caps Lock for ESC or Hold for Control",
+                        "description": "Caps Lock to Ctrl/Esc AND Physical Esc to Globe",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "lazy": true
-                                    }
-                                ],
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 500 },
+                                "to": [{ "key_code": "left_control" }],
                                 "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "fn" }],
                                 "type": "basic"
                             }
                         ]

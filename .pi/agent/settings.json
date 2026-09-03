@@ -2,7 +2,7 @@
   "lastChangelogVersion": "0.84.4",
   "theme": "catppuccin-frappe",
   "defaultProvider": "deepseek",
-  "defaultModel": "deepseek-v4-flash",
+  "defaultModel": "deepseek-v4-pro",
   "defaultThinkingLevel": "off",
   "quietStartup": true,
   "images": {

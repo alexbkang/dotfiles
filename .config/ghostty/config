@@ -5,3 +5,4 @@ window-padding-x = 10
 window-padding-y = 10
 macos-titlebar-style = hidden
 command = direct:/opt/homebrew/bin/tmux new-session -A -s main
+confirm-close-surface = false
